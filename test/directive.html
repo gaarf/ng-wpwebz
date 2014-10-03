@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-strict-di>
+<head>
+    <title>Directives Test</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="../dist/bundle/lib.css" />
+    <link rel="stylesheet" type="text/css" href="../dist/bundle/app.css" />
+</head>
+<body>
+
+  <header class="container">
+    <h1>Directives</h1>
+  </header>
+
+  <div class="container">
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+  </div>
+
+  <script type="text/javascript" src="../dist/bundle/lib.js"></script>
+  <script type="text/javascript" src="config.js"></script>
+  <script>
+    angular.element(document).ready( function () {
+      setTimeout(function(){
+        angular.bootstrap(document, [
+          PKG.name+'.directives', 
+          'ngSanitize',
+          'ngAnimate'
+        ]);
+      }, 1);
+    });
+  </script>
+  <script type="text/javascript" src="../dist/bundle/app.js"></script>
+  <script type="text/javascript" src="../dist/bundle/tpl.js"></script>
+
+</body>
+</html>
