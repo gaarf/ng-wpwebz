@@ -24,7 +24,6 @@ then, each in their own tab:
 
 ### testing:
 
-* `cd coopr-ngui`
 * `npm run build` ( == `npm install && bower install && gulp build`)
 * `npm run test-single-run` (unit tests)
 * `npm run protractor` (end-to-end tests, needs `npm start` running in parallel)
