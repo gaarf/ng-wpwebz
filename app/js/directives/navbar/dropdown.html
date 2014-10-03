@@ -1,19 +1,11 @@
 <ul class="dropdown-menu dropdown-menu-right" role="menu" style="left:auto">
 
   <li role="presentation">
-    <a role="menuitem" tabindex="-1" href="http://docs.cask.co/coopr/current/en" target="_blank">
+    <a role="menuitem" tabindex="-1" href="http://blog.cask.co" target="_blank">
       <span class="fa fa-book"></span>
-      Documentation
+      Blog
     </a>
   </li>
-
-  <li role="presentation">
-    <a role="menuitem" tabindex="-1" href="https://groups.google.com/forum/#!forum/coopr-dev" target="_blank">
-      <span class="fa fa-support"></span>
-      Support
-    </a>
-  </li>
-
 
 
   <li role="presentation" class="divider"></li>
@@ -29,33 +21,5 @@
     </a>
   </li>
 
-
-
-  <li role="presentation" class="divider"></li>
-
-  <li role="presentation" class="dropdown-header" ng-show="currentUser">
-    {{currentUser.username}}/{{currentUser.tenant}}
-  </li>
-
-  <li role="presentation" ng-show="currentUser.hasRole('superadmin')" ui-sref-active="disabled">
-    <a role="menuitem" tabindex="-1" ui-sref="tenants.list">
-      <span class="fa fa-user"></span>
-      Tenants
-    </a>
-  </li>
-
-  <li role="presentation" ng-show="currentUser">
-    <a role="menuitem" tabindex="-1" href="" ng-click="logout()">
-      <span class="fa fa-sign-out"></span>
-      Logout
-    </a>
-  </li>
-
-  <li role="presentation" ng-hide="currentUser" ui-sref-active="disabled">
-    <a role="menuitem" tabindex="-1" href="" ui-sref="login">
-      <span class="fa fa-sign-in"></span>
-      Sign in
-    </a>
-  </li>
 
 </ul>
