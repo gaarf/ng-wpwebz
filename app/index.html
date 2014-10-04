@@ -13,12 +13,14 @@
 </head>
 <body ng-controller="BodyCtrl" ng-class="bodyClass">
 
-    <header class="navbar navbar-default navbar-fixed-top">
-      <div class="container" role="navigation" my-navbar></div>
+    <header>
+      <div class="navbar navbar-default">
+        <div class="container" role="navigation" my-navbar></div>
+      </div>
     </header>
 
-    <main class="container">
-      <div ui-view></div>
+    <main>
+      <div class="container" ui-view></div>
     </main>
 
     <div id="alerts">
