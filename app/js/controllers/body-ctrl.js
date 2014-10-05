@@ -34,6 +34,13 @@ function ($scope, myTheme, MYTHEME_EVENT) {
     classes.push(activeThemeClass);
 
     $scope.bodyClass = classes.join(' ');
+
+
+    $scope.heroicTpl = false;
+    if(state.name === 'home') {
+      $scope.heroicTpl = '/partials/home-carousel.html';  
+    }
+
   });
 
 

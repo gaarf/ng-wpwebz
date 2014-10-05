@@ -17,11 +17,13 @@
       <div class="navbar navbar-default">
         <div class="container" role="navigation" my-navbar></div>
       </div>
+
+      <div id="hero"
+        ng-include="heroicTpl"
+        ></div>
     </header>
 
-    <main>
-      <div class="container" ui-view></div>
-    </main>
+    <main ui-view></main>
 
     <div id="alerts">
       <div class="container"></div>

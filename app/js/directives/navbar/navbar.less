@@ -8,19 +8,41 @@
 
   ul.nav > li > a {
     text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  ul.navbar-secondary {
+    @media (min-width: @screen-sm-min) {
+      position: absolute;
+      right: 28px;
+      top: -18px;
+
+      > li > a {
+        font-family: GothamLight;
+        font-size: 77%;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
   }
 
   a.navbar-brand {
     background: url(../img/cask_logo_white.png) no-repeat 0 0;
     position: absolute;
-    top: 8px;
-    left: 5px;
+    top: -9px;
+    left: 33px;
     width: 80px;
     height: 68px;
 
     @media (max-width: @screen-sm-max) {
-      left: -10px;
-      height: 42px;
+      top: 0;
+      background-position: 0 6px;
+      left: 8px;
+      height: 50px;
+    }
+
+    @media (max-width: @screen-xs-max) {
+      left: -8px;
     }
   }
 
@@ -57,7 +79,6 @@
       }
     }
 
-
-
   }
+
 }

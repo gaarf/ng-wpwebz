@@ -9,6 +9,7 @@
      <span class="sr-only">Cask</span>
    </a>
 </div>
+
 <div class="collapse navbar-collapse" ng-class="{in:navbarCollapsed}">
 
   <div ng-click="navbarCollapsed = false">
@@ -23,6 +24,19 @@
           ui-sref-active="active">
         <a ui-sref="{{link.sref}}">
           {{link.label || link.sref}}
+        </a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-secondary">
+      <li>
+        <a ui-sref="contact">
+          Contact Sales
+        </a>
+      </li>
+      <li>
+        <a ui-sref="login">
+          Customer Login
         </a>
       </li>
     </ul>

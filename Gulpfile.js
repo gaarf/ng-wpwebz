@@ -127,7 +127,7 @@ gulp.task('tpl', function() {
       })),
 
     gulp.src([
-      './app/partials/home.html'
+      './app/partials/home*.html'
     ])
       .pipe(plug.angularTemplatecache({
         module: pkg.name,

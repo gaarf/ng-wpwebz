@@ -58,10 +58,17 @@ footer {
 /* header */
 
 header {
+  display: block;
+
   background: rgb(72, 80, 93) url(../img/bg_home.jpg) no-repeat;
   background-size: cover;
-  min-height: 300px;
 
+  @media (min-width: @screen-sm-min) {
+    padding-top: 25px;
+    min-height: 100px; // to show entire navbar-brand
+  }
+
+  transition: .3s all;
 
 }
 
