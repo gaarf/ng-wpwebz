@@ -4,6 +4,7 @@ angular
   .module(PKG.name, [
 
     angular.module(PKG.name+'.services', [
+      'ngResource',
       'ngStorage'
     ]).name,
 
@@ -66,11 +67,13 @@ angular
     if(delay) {
       delay = parseInt(delay[1], 10);
       console.log('HTTP interceptor will delay responses for', delay, 'ms');
-      $httpProvider.interceptors.push(function ($q, $timeout) {
+      $httpProvider.interceptors.push(function ($q, $timeout, cfpLoadingBar) {
         return {
           response: function(data) {
             var defer = $q.defer();
+            cfpLoadingBar.start();
             $timeout(function () {
+              cfpLoadingBar.complete();
               defer.resolve(data);
             }, delay);
             return defer.promise;

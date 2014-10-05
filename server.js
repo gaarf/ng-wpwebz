@@ -12,7 +12,7 @@ var HTTP_PORT = 8080,
 var httpLabel = color.green('http-server'),
     corsLabel = color.pink('cors-proxy'),
     httpLogger = morgan(httpLabel+' :method :url', {immediate: true}),
-    corsLogger = morgan(corsLabel+' :method :url :cooprcred :status', {
+    corsLogger = morgan(corsLabel+' :method :url :status', {
       skip: function(req, res) { return req.method === 'OPTIONS' }
     });
 

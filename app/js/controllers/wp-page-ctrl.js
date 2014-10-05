@@ -3,7 +3,9 @@
  */
 
 angular.module(PKG.name+'.controllers').controller('WpPageCtrl', 
-function ($scope) {
+function ($scope, myWordpress) {
+
+  window.myWordpress = myWordpress;
 
   console.log('WpPageCtrl');
 

@@ -12,7 +12,7 @@
 
 <div class="collapse navbar-collapse" ng-class="{in:navbarCollapsed}">
 
-  <div ng-click="navbarCollapsed = false">
+  <div ng-click="collapseUnlessToggle($event)">
 
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
@@ -30,7 +30,7 @@
 
     <ul class="nav navbar-nav navbar-secondary">
       <li>
-        <a ui-sref="contact">
+        <a ui-sref="wp.company.contact">
           Contact Sales
         </a>
       </li>

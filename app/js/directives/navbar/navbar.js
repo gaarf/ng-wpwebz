@@ -3,19 +3,18 @@
  */
 
 angular.module(PKG.name+'.directives').directive('myNavbar',
-function myNavbarDirective ($dropdown) {
+function myNavbarDirective ($dropdown, $state) {
   return {
     restrict: 'A',
     templateUrl: 'navbar/navbar.html',
 
     link: function (scope, element, attrs) {
 
-      scope.navbarLinks = [
-        { sref: 'wp({page:"ecosystem"})', label: 'Ecosystem' },
-        { sref: 'wp({page:"downloads"})', label: 'Downloads' },
-        { sref: 'wp({page:"resources"})', label: 'Resources' },
-        { sref: 'wp({page:"company"})', label: 'Company' }
-      ];
+      scope.navbarLinks = ['ecosystem','downloads','resources','company']
+        .map(function (one){
+          var s = $state.get('wp.'+one);
+          return { sref: s.name, label: s.data.title };
+        });
 
       scope.dropdownLinks = [
         { sref: 'product.detail({name:"cdap"})', label: 'CDAP' },
@@ -30,6 +29,13 @@ function myNavbarDirective ($dropdown) {
         scope: scope
       });
 
+      scope.navbarCollapsed = false;
+
+      scope.collapseUnlessToggle = function (e) {
+        if(!angular.element(e.target).hasClass('dropdown-toggle')) {
+          scope.navbarCollapsed = false;          
+        }
+      }
     }
   };
 });

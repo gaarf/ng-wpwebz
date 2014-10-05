@@ -8,7 +8,7 @@ function myTitleFilter () {
 
   return function(state) {
     var title = state.data && state.data.title;
-    return (title ? title + ' | ' : '') + PKG.name;
+    return 'Cask' + (title ? ' | ' + title : '');
   };
 
 });

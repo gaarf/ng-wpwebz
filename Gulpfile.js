@@ -56,7 +56,7 @@ gulp.task('js:lib', function() {
 
       './bower_components/angular-sanitize/angular-sanitize.js',
       './bower_components/angular-animate/angular-animate.js',
-      // './bower_components/angular-resource/angular-resource.js',
+      './bower_components/angular-resource/angular-resource.js',
 
       './bower_components/angular-ui-router/release/angular-ui-router.js',
 
@@ -84,7 +84,7 @@ gulp.task('js:lib', function() {
 
     ])
     .pipe(plug.concat('lib.js'))
-    .pipe(plug.uglify())
+    // .pipe(plug.uglify())
     .pipe(gulp.dest('./dist/bundle'));
 });
 
@@ -127,7 +127,7 @@ gulp.task('tpl', function() {
       })),
 
     gulp.src([
-      './app/partials/home*.html'
+      './app/partials/**/*.html'
     ])
       .pipe(plug.angularTemplatecache({
         module: pkg.name,
@@ -142,14 +142,8 @@ gulp.task('tpl', function() {
 
 
 gulp.task('html', function() {
-  return merge(
-
-    gulp.src('./app/*.html')
-      .pipe(gulp.dest('./dist')),
-
-    gulp.src('./app/partials/**/*.html')
-      .pipe(gulp.dest('./dist/partials'))
-  );
+  return gulp.src('./app/*.html')
+          .pipe(gulp.dest('./dist'));
 });
 
 
@@ -203,8 +197,8 @@ gulp.task('watch', ['build'], function() {
 
   gulp.watch(['./app/**/*.js', '!./app/**/*-test.js'], ['js:app']);
   gulp.watch('./app/**/*.{less,css}', ['css']);
-  gulp.watch(['./app/js/directives/**/*.html', './app/partials/home.html'], ['tpl']);
-  gulp.watch('./app/**/*.html', ['html']);
+  gulp.watch(['./app/**/*.html'], ['tpl']);
+  gulp.watch('./app/*.html', ['html']);
   gulp.watch('./app/img/**/*', ['img']);
 
 });

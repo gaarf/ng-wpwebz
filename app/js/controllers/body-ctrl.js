@@ -37,8 +37,14 @@ function ($scope, myTheme, MYTHEME_EVENT) {
 
 
     $scope.heroicTpl = false;
+
     if(state.name === 'home') {
-      $scope.heroicTpl = '/partials/home-carousel.html';  
+        $scope.heroicTpl = '/partials/hero/carousel.html';
+    }
+    else {
+      if(state.name.indexOf('wp.') === 0) {
+        $scope.heroicTpl = '/partials/hero/title.html';
+      }
     }
 
   });
