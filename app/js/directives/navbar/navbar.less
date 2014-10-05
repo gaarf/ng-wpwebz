@@ -1,7 +1,63 @@
+@import "../../../css/variables.less";
+
 [my-navbar] {
-  ul.navbar-right .dropdown-menu.bottom-right {
-    left: auto !important;
+
+  position:relative;
+
+  font-family: GothamMedium;
+
+  ul.nav > li > a {
+    text-transform: uppercase;
   }
 
+  a.navbar-brand {
+    background: url(../img/cask_logo_white.png) no-repeat 0 0;
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 80px;
+    height: 68px;
 
+    @media (max-width: @screen-sm-max) {
+      left: -10px;
+      height: 42px;
+    }
+  }
+
+  li.dropdown {
+
+    ul.dropdown-menu {
+      padding: 0;
+      background-color: @cask-orange;
+      border: none;
+      border-radius: 0;
+      a {
+        color: white;
+        &:hover {
+          background: white;
+          color: black;
+        }
+      }
+      > li {
+        a {
+          line-height: @navbar-height;
+        }
+        &.active a {
+          pointer-events: none;
+          background: darken(@cask-orange, 20%);
+        }
+      }
+
+    }
+
+    &.open {
+      a.dropdown-toggle {
+        background-color: @cask-orange;
+        color: white;
+      }
+    }
+
+
+
+  }
 }

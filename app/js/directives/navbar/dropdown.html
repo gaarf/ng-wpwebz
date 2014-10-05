@@ -1,25 +1,11 @@
-<ul class="dropdown-menu dropdown-menu-right" role="menu" style="left:auto">
+<ul class="dropdown-menu" role="menu">
 
-  <li role="presentation">
-    <a role="menuitem" tabindex="-1" href="http://blog.cask.co" target="_blank">
-      <span class="fa fa-book"></span>
-      Blog
-    </a>
+  <li role="presentation"
+      ng-repeat="link in dropdownLinks" 
+      ui-sref-active="active">
+        <a role="menuitem" tabindex="-1" ui-sref="{{link.sref}}">
+          {{link.label || link.sref}}
+        </a>
   </li>
-
-
-  <li role="presentation" class="divider"></li>
-
-  <li role="presentation" class="dropdown-header">
-    themes
-  </li>
-
-  <li role="presentation" ng-repeat="it in theme.list()" ng-class="{disabled:it==theme.current}">
-    <a role="menuitem" href="" ng-click="theme.set(it)">
-      <span class="fa" ng-class="it==theme.current ? 'fa-dot-circle-o' : 'fa-circle-o'"></span>
-      {{it | myCapitalizeFilter}}
-    </a>
-  </li>
-
 
 </ul>
