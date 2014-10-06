@@ -5,7 +5,7 @@
  */
 
 angular.module(PKG.name+'.controllers').controller('BodyCtrl', 
-function ($scope, myTheme, MYTHEME_EVENT) {
+function ($scope, $timeout, myTheme, MYTHEME_EVENT) {
 
   var activeThemeClass = myTheme.getClassName();
 
@@ -39,13 +39,14 @@ function ($scope, myTheme, MYTHEME_EVENT) {
     $scope.heroicTpl = false;
 
     if(state.name === 'home') {
-        $scope.heroicTpl = '/partials/hero/carousel.html';
+      $scope.heroicTpl = '/partials/hero/carousel.html';
     }
     else {
       if(state.name.indexOf('wp.') === 0) {
         $scope.heroicTpl = '/partials/hero/title.html';
       }
     }
+
 
   });
 
