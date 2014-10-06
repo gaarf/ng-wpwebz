@@ -11,8 +11,12 @@
 
     display: inline-block;
 
-    padding: 0 50px;
-
+    &.ng-animate {
+      display: inline-block;
+      &.ng-hide-add {
+        display: none !important;
+      }
+    }
   }
 
   .controls {
