@@ -25,8 +25,9 @@ function myCarouselDirective () {
 
       function setAnimationClass (d) {
         var am = 'am-slide-';
-        allSlides.removeClass(am+'right '+am+'left');
-        allSlides.addClass(am+d);
+        allSlides
+          .removeClass(am+'right '+am+'left')
+          .addClass(am+d);
       }
 
       scope.slideIsVisible = function(n) {

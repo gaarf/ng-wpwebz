@@ -59,10 +59,13 @@ footer {
 
 header {
   display: block;
-  overflow: hidden;
 
   background: @hdbgcolor url(../img/bg_home.jpg) no-repeat;
   background-size: cover;
+
+  a:focus {
+    outline: none;
+  }
 
   @media (min-width: @screen-sm-min) {
     padding-top: 25px;
@@ -78,7 +81,6 @@ header {
 
 #hero {
   text-align: center;
-
   padding: 0 20px 15px;
 
   h1 {
@@ -183,7 +185,6 @@ fieldset.row {
 
 
 /* other stuff */
-
 
 span.text-info[bs-tooltip] {
   cursor: help;

@@ -1,6 +1,7 @@
 .my-carousel {
 
   position: relative;
+
   min-height: 100px;
 
   text-align: center;
@@ -11,11 +12,8 @@
 
     display: inline-block;
 
-    &.ng-animate {
-      display: inline-block;
-      &.ng-hide-add {
-        display: none !important;
-      }
+    &.ng-animate.ng-hide-add {
+      display: none !important;
     }
   }
 
@@ -29,6 +27,7 @@
       bottom: 0;
       width: 50%;
 
+      padding:0 15px;
       cursor: pointer;
       user-select: none;
 
