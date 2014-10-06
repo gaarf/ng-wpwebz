@@ -3,7 +3,7 @@
  */
 
 angular.module(PKG.name+'.directives').directive('myCarousel',
-function myCarouselDirective () {
+function myCarouselDirective ($interval) {
   return {
     restrict: 'AC',
 
@@ -23,6 +23,17 @@ function myCarouselDirective () {
         }
       }
 
+      var tick = $interval(function() {
+        console.log('carousel tick');
+        scope.nextSlide();
+      }, 5000);
+
+      function cancelInterval() {
+        $interval.cancel(tick);
+      }
+
+      scope.$on('$destroy', cancelInterval);
+
       function setAnimationClass (d) {
         var am = 'am-slide-';
         allSlides
@@ -34,12 +45,18 @@ function myCarouselDirective () {
         return n == currentSlide;
       }
 
-      scope.nextSlide = function() {
+      scope.nextSlide = function (event) {
+        if(event) {
+          cancelInterval();
+        }
         setAnimationClass('right');
         boundaries(currentSlide++);
       }
 
-      scope.prevSlide = function() {
+      scope.prevSlide = function (event) {
+        if(event) {
+          cancelInterval();
+        }
         setAnimationClass('left');
         boundaries(currentSlide--);
       }
