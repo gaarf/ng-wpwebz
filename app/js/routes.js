@@ -29,7 +29,7 @@ angular.module(PKG.name)
 
 
       .state('login', {
-
+        // TODO
       })
 
 
@@ -46,10 +46,7 @@ angular.module(PKG.name)
       .state('wp', {
         abstract: true,
         templateUrl: '/partials/wpage.html',
-        controller: 'WpPageCtrl',
-        data: {
-          wpPostId: 32
-        }
+        controller: 'WpPageCtrl'
       })
         .state('wp.ecosystem', {
           url: '/ecosystem',
@@ -62,13 +59,15 @@ angular.module(PKG.name)
         .state('wp.downloads', {
           url: '/downloads',
           data: {
-            title: 'Downloads'
+            title: 'Downloads',
+            subTitle: 'come and get\'em'
           }
         })
         .state('wp.resources', {
           url: '/resources',
           data: {
-            title: 'Resources'
+            title: 'Resources',
+            subTitle: 'things and stuff for you'
           }
         })
         .state('wp.company', {

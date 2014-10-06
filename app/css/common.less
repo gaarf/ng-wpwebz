@@ -83,16 +83,14 @@ header {
   h1 {
     color: @cask-orange;
     text-transform: uppercase;
-
+    text-shadow: -4px 4px 0px rgba(50, 50, 50, 0.3);
     em {
-      font-size: 52px;
       font-style: normal;
     }
-
     small {
-      display: block;
       color: white;
-      font-size: 14px;
+      font-size: .4em;
+      display: block;
     }
   }
 
@@ -102,9 +100,9 @@ header {
 /* alerts */
 
 #alerts {
-  position: fixed;
+  position: absolute;
   z-index: 99;
-  top: 60px;
+  margin-top: -50px;
   left: 0;
   right: 0;
 }

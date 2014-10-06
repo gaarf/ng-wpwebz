@@ -3,11 +3,26 @@
  */
 
 angular.module(PKG.name+'.controllers').controller('WpPageCtrl', 
-function ($scope, myWordpress) {
+function ($scope, $state, myWordpress) {
 
-  window.myWordpress = myWordpress;
+  $scope.$on('$stateChangeSuccess', function (e, s) {
 
-  console.log('WpPageCtrl');
+    var page = myWordpress.Page.get({
+      id: s.data.wpPageId || s.name.split('.')[1]
+    });
+
+    page.$promise
+      .then(
+        function () {
+          console.log(page);
+          $scope.theContent = page.content;          
+        },
+        function () {
+          $state.go('404');
+        }
+      );
+    
+  });
 
 });
 

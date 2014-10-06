@@ -5,11 +5,35 @@
  * per-state styles
  */
 
+
+
+
+// homepage
+
 body.state-home {
   header {
-    min-height: 350px;
+    min-height: 320px;
+
+    #hero {
+      section {
+        h1 {
+          em {
+            font-size: 60px;
+          }
+        }
+        @media (min-width: @screen-sm-min) {
+          transform: scale(2);
+        }
+      }
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
   }
 }
+
+
+
+// 404 page not found
 
 body.state-404 {
   main {
@@ -23,12 +47,38 @@ body.state-404 {
 }
 
 
+
+
+// wordpress pages
+
 body.state-wp {
   header {
     min-height: 200px;
   }
+
+  .the-content {
+
+    // wordpress classes
+
+    .alignleft {
+      float: left;
+      margin: 5px 10px 10px 0;
+    }
+
+    .alignright {
+      float: right;
+      margin: 5px 0 10px 10px;
+    }
+
+  }
+
 }
 
+
+
+
+
+// product pages
 
 body.state-product {
   header {
@@ -37,3 +87,4 @@ body.state-product {
     }
   }
 }
+

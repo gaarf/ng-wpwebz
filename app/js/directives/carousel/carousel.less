@@ -1,0 +1,53 @@
+.my-carousel {
+
+  position: relative;
+  min-height: 100px;
+
+  text-align: center;
+
+  section {
+    position: relative;
+    z-index: 2;
+
+    display: inline-block;
+
+    padding: 0 50px;
+
+  }
+
+  .controls {
+
+    > a {
+      position: absolute;
+      z-index: 1;
+
+      top: 0;
+      bottom: 0;
+      width: 50%;
+
+      cursor: pointer;
+      user-select: none;
+
+      font-size: 50px;
+      line-height: 100px;
+
+      color: white;
+
+      &:hover {
+        color: orange;
+      }
+
+      &.prev {
+        left: 0;
+        text-align: left;
+      }
+
+      &.next {
+        right: 0;
+        text-align: right;
+      }      
+    }
+
+  }
+
+}
