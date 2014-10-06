@@ -22,7 +22,7 @@
 }
 
 
-
+@hdbgcolor: rgb(72, 80, 93);
 
 /* footer */
 
@@ -60,7 +60,7 @@ footer {
 header {
   display: block;
 
-  background: rgb(72, 80, 93) url(../img/bg_home.jpg) no-repeat;
+  background: @hdbgcolor url(../img/bg_home.jpg) no-repeat;
   background-size: cover;
 
   @media (min-width: @screen-sm-min) {
@@ -96,13 +96,39 @@ header {
 
 }
 
+/* login */
+
+#login {
+  background-color: @hdbgcolor;
+  color: white;
+  border-bottom: 1px solid @gray-light;
+
+  height: 100px;
+  overflow: hidden;
+
+  &.ng-hide {
+    height: 0;
+  }
+
+  transition: .3s height;
+
+  @media (max-width: @screen-xs-max) {
+    height: auto;
+  }
+
+  h4 {
+    margin-top: 16px;
+    text-transform: uppercase;
+  }
+}
+
 
 /* alerts */
 
 #alerts {
   position: absolute;
   z-index: 99;
-  margin-top: -50px;
+  top: 15px;
   left: 0;
   right: 0;
 }

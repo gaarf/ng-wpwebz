@@ -18,6 +18,7 @@ function ($scope, myTheme, MYTHEME_EVENT) {
   });
 
 
+
   $scope.$on('$stateChangeSuccess', function (event, state) {
     var classes = [];
     if(state.data && state.data.bodyClass) {
@@ -34,7 +35,6 @@ function ($scope, myTheme, MYTHEME_EVENT) {
     classes.push(activeThemeClass);
 
     $scope.bodyClass = classes.join(' ');
-
 
     $scope.heroicTpl = false;
 

@@ -28,11 +28,6 @@ angular.module(PKG.name)
       })
 
 
-      .state('login', {
-        // TODO
-      })
-
-
       .state('product', {
         url: '/products',
         templateUrl: '/partials/products.html',

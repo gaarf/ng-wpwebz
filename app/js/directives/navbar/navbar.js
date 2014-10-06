@@ -3,7 +3,7 @@
  */
 
 angular.module(PKG.name+'.directives').directive('myNavbar',
-function myNavbarDirective ($dropdown, $state) {
+function myNavbarDirective ($dropdown, $rootScope, $state) {
   return {
     restrict: 'A',
     templateUrl: 'navbar/navbar.html',
@@ -36,6 +36,12 @@ function myNavbarDirective ($dropdown, $state) {
           scope.navbarCollapsed = false;          
         }
       }
+
+
+      scope.doLogin = function () {
+        $rootScope.$broadcast('toggleLogin');
+      }
+
     }
   };
 });

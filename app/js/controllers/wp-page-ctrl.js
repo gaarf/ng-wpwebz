@@ -8,6 +8,7 @@ function ($scope, $state, myWordpress) {
   $scope.$on('$stateChangeSuccess', function (e, s) {
 
     var page = myWordpress.Page.get({
+      // "pagename" works as an id
       id: s.data.wpPageId || s.name.split('.')[1]
     });
 
